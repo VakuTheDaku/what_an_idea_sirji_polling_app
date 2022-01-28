@@ -1,0 +1,80 @@
+<%- include('includes/navigation.ejs') %>
+<% if(isAuthenticated) {%>
+    <h1>Welcome <%= Teamname %></h1>
+<div class="container">
+<div class="row">
+<div class="col-lg-6">
+<div class="card style="width: 15rem;"">
+    
+    <div class="card-header">
+      Team 1
+    </div>
+    <div class="card-body" >
+      <h5 class="card-title">Abstract</h5>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, reprehenderit velit exercitationem dolorem atque quod quos, quas modi odit culpa facere impedit repellendus ipsam, quibusdam est assumenda architecto neque magni!</p>
+      <% if (votesbalance>0) { %>
+      <form action="/vote1" method="post">
+      <button type= "submit" btn btn-primary">Vote</button>
+    </form>
+    <% } %>
+    </div>
+</div>
+  </div>
+  <div class="col-lg-6">
+  <div class="card style="width: 15rem;"">
+    <div class="card-header">
+      Team 2
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Abstract</h5>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, reprehenderit velit exercitationem dolorem atque quod quos, quas modi odit culpa facere impedit repellendus ipsam, quibusdam est assumenda architecto neque magni!</p>
+      <% if (votesbalance>0) { %>
+      <form action="/vote2" method="post">
+      <button type= "submit" btn btn-primary">Vote</button>
+    </form>
+    <% } %>
+    </div>
+  </div>
+</div>
+</div>
+<div class="row my-4">
+    <div class="col-lg-6">
+  <div class="card style="width: 15rem;"">
+    <div class="card-header">
+      Team 3
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Abstract</h5>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, reprehenderit velit exercitationem dolorem atque quod quos, quas modi odit culpa facere impedit repellendus ipsam, quibusdam est assumenda architecto neque magni!</p>
+      <% if (votesbalance>0) { %>
+      <form action="/vote3" method="post">
+      <button type= "submit" btn btn-primary">Vote</button>
+    </form>
+    <% } %>
+    </div>
+  </div>
+</div>
+  <div class="col-lg-6">
+  <div class="card style="width: 15rem;"">
+    <div class="card-header">
+      Team 4
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Abstract</h5>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, reprehenderit velit exercitationem dolorem atque quod quos, quas modi odit culpa facere impedit repellendus ipsam, quibusdam est assumenda architecto neque magni!</p>
+      <% if (votesbalance>0) { %>
+      <form action="/vote4" method="post">
+      <button type= "submit" btn btn-primary">Vote</button>
+    </form>
+    <% } %>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<h3>You have <%= votesbalance %> votes remaining</h3>
+<% } else { %>
+    <h2>Login with your team id and secret code to vote</h2>
+<% } %>
+</body>
+</html>
