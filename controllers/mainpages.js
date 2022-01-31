@@ -76,7 +76,7 @@ exports.store=async (req,res,next)=>{
     
     const {username, password, votebalance, votes}= req.body
     let hashpass=await bcrypt.hash(password, 8)
-
+    
     Team.create({
         name: username,
         

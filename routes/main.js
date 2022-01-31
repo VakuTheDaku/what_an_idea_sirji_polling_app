@@ -19,7 +19,7 @@ router.post('/loginstore',controller.logincontro)
 router.get('/logout',(req,res,next)=>{
     req.session.destroy((err)=>{
         res.redirect('/')
-        console.log(err)
+        
     })
     
 })

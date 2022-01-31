@@ -3,22 +3,23 @@ const app=express()
 const session =require('express-session')
 var MySQLStore = require('express-mysql-session')(session);
 const path = require('path')
-
+const dotenv= require('dotenv')
+dotenv.config()
 
 const publicdrc = path.join(__dirname,'./public')
 app.use(express.static(publicdrc))
 var options = {
-	host: 'localhost',
-	port: 8111,
-	user: 'root',
-	password: '',
-	database: 'teams',
+	host: process.env.HOST,
+	port: process.env.PORT,
+	user: process.env.USER,
+	password: process.env.PASSWORD,
+	database: process.env.DATABASE,
     
 };
 
 var sessionStore = new MySQLStore(options);
 app.use(session({
-    secret: 'Hey i am vaku the daku', resave: false, saveUninitialized: false,store: sessionStore
+    secret: process.env.SECRET, resave: false, saveUninitialized: false,store: sessionStore
 }))
 
 const bodyParser=require('body-parser')
