@@ -1,24 +1,59 @@
-<%- include('includes/navigation.ejs') %>
-<div class="container">
-    <h1>Log In Here</h1>
-    <form class="mt-4" method="post" action="/loginstore">
-        <div class="form-group row mt-4">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Team Name</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Team Vak" name="name">
-            </div>
-          </div>
-          <div class="form-group row mt-4">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" placeholder="***********" id="inputPassword" name="password">
-            </div>
-          </div>
-          <button class="btn btn-primary mt-3" type="submit">Sign in</button>
-        </form>
-        <% if (passnomatch==true) { %>
-            <h2>Your Team name or password is not valid</h2>
-          <% } %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/loginmain.css" />
+    <title>Title</title>
+  </head>
+  <body>
+    <% if (!isAuthenticated){ %>
+    <div class="container-fluid">
+  <div class="inner-wrapper">
+
+    
+    <div class="inner-container">
+        <div class="title-img">
+          <img src="./images/babu_girl.svg" class="img-fluid img-responsive" alt="" />
         </div>
-        </body>
-        </html>
+        <div class="login-slide">
+          <h1>LOGIN</h1>
+          <div class="inner-login-slide">
+            <form action="/login" method="post">
+              <input class="team-name" type="text" placeholder="Team ID" name="name" />
+              <input class="password" type="password" placeholder="Password" name="password"/>
+              <button class="btn rounded-pill login" type="submit">Login</button>
+              
+            </form>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+  </div>
+ 
+    </div>
+    <% if (passnomatch==true) { %>
+        <h2 class="alert alert-warning text-center" style="font-size: small; position: relative; bottom: 40px;">Your Team name or password is not valid</h2>
+      <% } %>
+      <% }else{ %>
+        <form action="/logout" method="get">
+          <button class="btn ml-4 text-center" type="submit">logout</button>
+        </form>
+        <% } %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -13,9 +13,9 @@ router.get('/register',(req,res,next)=>{
 router.post('/store',controller.store)
 router.get('/login',(req,res,next)=>{
     const isLoggedIn= req.session.isLoggedIn===true
-    res.render('login',{pagetitle: 'Login', name: 'loginpage', isAuthenticated: isLoggedIn, passnomatch: false})
+    res.render('login',{pagetitle: 'Login',isAuthenticated: isLoggedIn, passnomatch: false})
 })
-router.post('/loginstore',controller.logincontro)
+router.post('/login',controller.logincontro)
 router.get('/logout',(req,res,next)=>{
     req.session.destroy((err)=>{
         res.redirect('/')

@@ -4,21 +4,21 @@ var Team=require('../models/model')
 exports.mainpage=(req,res,next)=>{
     const isLoggedIn= req.session.isLoggedIn===true
     if(isLoggedIn){
-    const name= req.session.name
-    Team.findAll({where: {name: name}}).then((team)=>{
-        
-        req.session.votebalance=team[0].votebalance
-        
-        res.render('homepage',{pagetitle: 'Homepage', name: 'mainpage',isAuthenticated: isLoggedIn, Teamname:  req.session.name, votesbalance: req.session.votebalance})
+        const name= req.session.name
+        Team.findAll({where: {name: name}}).then((team)=>{
+            
+            req.session.votebalance=team[0].votebalance
+            
+            res.render('homepage',{pagetitle: 'Homepage',Teamname:  req.session.name,isAuthenticated: isLoggedIn, votesbalance: req.session.votebalance})
 
     }).catch((err)=>console.log(err))
-}
-else{
-    res.render('homepage',{pagetitle: 'Homepage', name: 'mainpage',isAuthenticated: isLoggedIn})
-}
+    }
+    else{
+        res.render('homenew',{pagetitle: 'Homepage',isAuthenticated: isLoggedIn})
+    }
     }
 exports.vote1=(req,res,next)=>{
-    const isLoggedIn= req.session.isLoggedIn===true
+    
     const name= req.session.name
     Team.findAll({where: {name: name}}).then((team)=>{
         team[0].votebalance-=1
@@ -31,7 +31,7 @@ exports.vote1=(req,res,next)=>{
     res.redirect('/')
 }
 exports.vote2=(req,res,next)=>{
-    const isLoggedIn= req.session.isLoggedIn===true
+    
     const name= req.session.name
     Team.findAll({where: {name: name}}).then((team)=>{
         team[0].votebalance-=1
@@ -44,7 +44,7 @@ exports.vote2=(req,res,next)=>{
     res.redirect('/')
 }
 exports.vote3=(req,res,next)=>{
-    const isLoggedIn= req.session.isLoggedIn===true
+    
     const name= req.session.name
     Team.findAll({where: {name: name}}).then((team)=>{
         team[0].votebalance-=1
@@ -57,7 +57,7 @@ exports.vote3=(req,res,next)=>{
     res.redirect('/')
 }
 exports.vote4=(req,res,next)=>{
-    const isLoggedIn= req.session.isLoggedIn===true
+    
     const name= req.session.name
     Team.findAll({where: {name: name}}).then((team)=>{
         team[0].votebalance-=1
@@ -89,7 +89,7 @@ exports.store=async (req,res,next)=>{
     res.redirect('/')
 }
 exports.logincontro=(req,res,next)=>{
-    
+    passnomatch=false
     username=req.body.name
     password=req.body.password
     
@@ -107,14 +107,15 @@ exports.logincontro=(req,res,next)=>{
             }
             else{
                 const isLoggedIn= req.session.isLoggedIn===true
-                
-                res.render('login',{pagetitle: 'Login', name: 'loginpage', isAuthenticated: isLoggedIn, passnomatch: true})
+                passnomatch=true
+                res.render('login',{pagetitle: 'Login', name: 'loginpage', isAuthenticated: isLoggedIn, passnomatch: passnomatch})
             }
         })
         }
         else{
+            passnomatch=true
             const isLoggedIn= req.session.isLoggedIn===true
-            res.render('login',{pagetitle: 'Login', name: 'loginpage', isAuthenticated: isLoggedIn, passnomatch: true})
+            res.render('login',{pagetitle: 'Login', name: 'loginpage', isAuthenticated: isLoggedIn, passnomatch: passnomatch})
         }
     
     }).catch((err)=>console.log(err))
