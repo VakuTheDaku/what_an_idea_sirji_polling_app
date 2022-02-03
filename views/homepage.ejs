@@ -115,61 +115,28 @@
       </style>
       <style>
       
-          *{
-              margin:0;
-              padding:0;
-              box-sizing:border-box;
-              position:relative;
-          }
           body,html{
-              height:100%;
-              width:100%;
-              
+             width: 100%;
+            
+              margin: 0;
+              padding: 0;
+              overflow-x: hidden !important;
           }
           @font-face {
               font-family: funnyFont;
               src: url(./assets/FunSized.ttf);
           }
-          .container-fluid{
-              font-size:48px;
-              height:100%;
-              width:100%;
-              color:#086E7D;
-              /* background-color:#FFC900; */
-          }
-      
-          .content{
-              /* background-color:orange; */
-              height:100%;
-              /* text-align:center; */
-          }
-      
-          .animation-lamp{
-              height:100%;
-              width:100%;
-              z-index:-1;
-              position:absolute;
-              top:0;
-          left:0;
-              /* background-color:#FFCA03; */
-          }
-          .content-title{
-              font-size:clamp(20px, 58px, 64px);
-              position:absolute;
-              width:100%;
-              top:290px;
-              font-family:funnyFont;
-      
-          }
+          
           .team-name{
-              font-size:clamp(20px, 58px, 64px);
+              /* font-size:clamp(20px, 58px, 64px); */
               position:relative;
-              width:100%;
+              /* width:100%; */
               
-              font-family:funnyFont;
+              
       
           }
-          .content .btn{
+          
+          .navbar .btn{
               background-color:#086E7D;
               color:#fff;
               font-weight:bolder;
@@ -177,61 +144,117 @@
               /* margin-top:460px; */
               
       
+            }
+            .section{
+                /* position: fixed; */
+               
+                left: 0;
+                width: 600%;
+                height: 100vh;
+                display: flex;
+
+            }
+            .page{
+                position: relative;
+                
+                width: 100%;
+                height: 100vh;
+                box-sizing: border-box;
+                
+            }
+            .container-fluid{
+              position: relative;
+              align-items: baseline;
+              height:100vh;
+              width: 100%;
+              color:#086E7D;
+              /* background-color:#FFC900; */
           }
+      
+          /* .pageone{
+              width: 40%;
+          } */
+      
+          .animation-lamp{
+              height:100%;
+              width:100%;
+              z-index:-1;
+              position:relative;
+              top:0;
+              left:0;
+              /* background-color:#FFCA03; */
+          }
+          .content-title{
+              font-size:clamp(20px, 58px, 64px);
+              position:relative;
+              width:100%;
+              top: 50%;
+              font-family:funnyFont;
+      
+          }
+          
+
+
       </style>
     <title><%= pagetitle %></title>
 </head>
 
 <body>
-  
-  <div class="container-fluid">
-
-    <section class="animation-lamp">
-        <div class="lamp">
-
-            <div class="cable"></div>
-            <div class="cover"></div>
-            <div class="in-cover">
-             <div class="bulb"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <% if(isAuthenticated) {%>
+        
+    <div class="section">
+        <section class="page">
+            <div class="navbar">
+                <div class="navbar-brand">
+                    <h1 class="team-name">Welcome <span style="color: #086E7D;"><%= Teamname %></span>
+                        </h1>
+                        </div>
+                        <div class="nav-item">
+                  <form action="/logout" method="get">
+                  <button class="btn ml-4 text-center" type="submit">logout</button>
+                   </form>
+                </div>
             </div>
-            <div class="light"></div>
-           
-          </div>
-          
-          
-          
-          
-    </section>
+            <div class="container-fluid">
+            <section class="animation-lamp" style="width: 100px; height: 100px;">
+                <div class="lamp">
 
-    <section class="content">
-        <h1 class="content-title text-center">
-            what an idea <br>
-            sir ji
-        </h1>
-        <% if(isAuthenticated) {%>
-          <h1 class="team-name">Welcome <span><%= Teamname %></span>
-        <form action="/logout" method="get">
-        <button class="btn ml-4 text-center" type="submit">logout</button>
-      </form>
-    </section>
+                    <div class="cable"></div>
+                    <div class="cover"></div>
+                    <div class="in-cover">
+                    <div class="bulb"></div>
+                    </div>
+                    <div class="light"></div>
+                
+                </div>
+            </section>
+            <section class="content">
+                <h1 class="content-title text-center">
+                    what an idea <br>
+                    sir ji
+                </h1>
+            </section>
         </div>
+       
+        <% if (votesbalance>0) { %><h3 class="alert fixed-bottom alert-info">You have <%= votesbalance %> votes remaining</h3>
+        <% } else{ %>
+            <h3 class="alert fixed-bottom alert-danger">You have <%= votesbalance %> votes remaining</h3>
+            <% } %>  
+            
+        </section>
 
 
 
 
-    <div class="container">
+    <section class="page" style="background-color: #8ecae6;">
 
         
-            
-                </h1>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="card style=" width: 15rem;"">
 
-                                <div class="card-header">
-                                    Team 1
-                                </div>
+                                
+                                <h1>    Team 1</h1>
+                                
                                 <div class="card-body">
                                     <h5 class="card-title">Abstract</h5>
                                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -244,13 +267,15 @@
                                         </form>
                                         <% } %>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="card style=" width: 15rem;"">
-                                <div class="card-header">
-                                    Team 2
-                                </div>
+                            
+                            
+                        
+            </section>
+            <section class="page" style="background-color: #219ebc;">
+                
+                            <h1>Team 2</h1>
+                                    
+                               
                                 <div class="card-body">
                                     <h5 class="card-title">Abstract</h5>
                                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -263,15 +288,15 @@
                                         </form>
                                         <% } %>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row my-4">
-                        <div class="col-lg-6">
-                            <div class="card style=" width: 15rem;"">
-                                <div class="card-header">
-                                    Team 3
-                                </div>
+                            
+                            
+                        
+                   </section>
+                    <section class="page" style="background-color: #023047;">
+                    
+                            <h1>Team 3</h1>
+                                
+                                
                                 <div class="card-body">
                                     <h5 class="card-title">Abstract</h5>
                                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -284,13 +309,14 @@
                                         </form>
                                         <% } %>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="card style=" width: 15rem;"">
-                                <div class="card-header">
-                                    Team 4
-                                </div>
+                               
+                            
+                        </section>
+                        <section class="page" style="background-color: #ffb703;">
+                        
+                           <h1>  Team 4</h1>
+                                  
+                               
                                 <div class="card-body">
                                     <h5 class="card-title">Abstract</h5>
                                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -302,18 +328,55 @@
                                             <button type="submit" btn btn-primary">Vote</button>
                                         </form>
                                         <% } %>
+
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                           
+                                
+                        </section>
+                        <section class="page" style="background-color: #fb8500;">
+                        
+                            <h1>  Team 5</h1>
+                                   
+                                
+                                 <div class="card-body">
+                                     <h5 class="card-title">Abstract</h5>
+                                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                         Possimus, reprehenderit velit exercitationem dolorem atque quod quos, quas modi
+                                         odit culpa facere impedit repellendus ipsam, quibusdam est assumenda architecto
+                                         neque magni!</p>
+                                     <% if (votesbalance>0) { %>
+                                         <form action="/vote4" method="post">
+                                             <button type="submit" btn btn-primary">Vote</button>
+                                         </form>
+                                         <% } %>
+ 
+                                 </div>
+                            
+                                 
+                         </section>
                 </div>
-                <h3 class="alert alert-info">You have <%= votesbalance %> votes remaining</h3>
                 <% } else { %>
                     <h2 class="alert alert-warning">Login with your team id and secret code to vote</h2>
-                    <% } %>
+                <% } %>
 
-    </div>
+ 
+    <script>
+        
+        let sections =gsap.utils.toArray(".page")
+        gsap.to(sections, {
+            xPercent: -100 * (sections.length-1),
 
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".section",
+                
+                pin: true,
+                scrub: 1,
+                snap: 1 / (sections.length -1),
+                end: () => "+="+document.querySelector(".section").offsetWidth
+            }
+        })
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>

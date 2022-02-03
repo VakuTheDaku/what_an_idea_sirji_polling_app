@@ -19,7 +19,9 @@ var options = {
 
 var sessionStore = new MySQLStore(options);
 app.use(session({
-    secret: process.env.SECRET, resave: false, saveUninitialized: false,store: sessionStore
+    secret: process.env.SECRET, resave: false, saveUninitialized: false,store: sessionStore,cookie:{
+		maxAge:3600000
+	}
 }))
 
 const bodyParser=require('body-parser')

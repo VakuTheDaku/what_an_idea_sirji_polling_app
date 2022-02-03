@@ -1,5 +1,5 @@
-const express=require('express')
 const bcrypt=require('bcryptjs')
+const { redirect } = require('express/lib/response')
 var Team=require('../models/model')
 exports.mainpage=(req,res,next)=>{
     const isLoggedIn= req.session.isLoggedIn===true
@@ -19,55 +19,98 @@ exports.mainpage=(req,res,next)=>{
     }
 exports.vote1=(req,res,next)=>{
     
-    const name= req.session.name
+    const name= req.session.name 
+    if(req.session.isLoggedIn===true ){
     Team.findAll({where: {name: name}}).then((team)=>{
+        if(team[0].votebalance>0){
         team[0].votebalance-=1
+        
         team[0].save()
+        }
+        else{
+            res.redirect('/')
+        }
     }).catch((err)=>console.log(err))
     Team.findAll({where: {name: 'Team1'}}).then((team)=>{
         team[0].votes+=1
         team[0].save()
     }).catch((err)=>console.log(err))
     res.redirect('/')
+    }
+    else{
+        res.redirect('/')
+    }
 }
 exports.vote2=(req,res,next)=>{
-    
-    const name= req.session.name
+    const name= req.session.name 
+    if(req.session.isLoggedIn===true ){
     Team.findAll({where: {name: name}}).then((team)=>{
+        if(team[0].votebalance>0){
         team[0].votebalance-=1
+        
         team[0].save()
+        }
+        else{
+            res.redirect('/')
+        }
     }).catch((err)=>console.log(err))
     Team.findAll({where: {name: 'Team2'}}).then((team)=>{
         team[0].votes+=1
         team[0].save()
     }).catch((err)=>console.log(err))
     res.redirect('/')
+    }
+    else{
+        res.redirect('/')
+    }
 }
 exports.vote3=(req,res,next)=>{
     
-    const name= req.session.name
+    const name= req.session.name 
+    if(req.session.isLoggedIn===true ){
     Team.findAll({where: {name: name}}).then((team)=>{
+        if(team[0].votebalance>0){
         team[0].votebalance-=1
+        
         team[0].save()
+        }
+        else{
+            res.redirect('/')
+        }
     }).catch((err)=>console.log(err))
     Team.findAll({where: {name: 'Team3'}}).then((team)=>{
         team[0].votes+=1
         team[0].save()
     }).catch((err)=>console.log(err))
     res.redirect('/')
+    }
+    else{
+        res.redirect('/')
+    }
 }
 exports.vote4=(req,res,next)=>{
     
-    const name= req.session.name
+    const name= req.session.name 
+    if(req.session.isLoggedIn===true ){
     Team.findAll({where: {name: name}}).then((team)=>{
+        if(team[0].votebalance>0){
         team[0].votebalance-=1
+        
         team[0].save()
+        }
+        else{
+            res.redirect('/')
+        }
     }).catch((err)=>console.log(err))
     Team.findAll({where: {name: 'Team4'}}).then((team)=>{
         team[0].votes+=1
         team[0].save()
     }).catch((err)=>console.log(err))
     res.redirect('/')
+    }
+    else{
+        res.redirect('/')
+    }
 }
 
 
@@ -118,6 +161,13 @@ exports.logincontro=(req,res,next)=>{
             res.render('login',{pagetitle: 'Login', name: 'loginpage', isAuthenticated: isLoggedIn, passnomatch: passnomatch})
         }
     
-    }).catch((err)=>console.log(err))
-    }
+   
+    
+    
+    
+    }).catch((err)=>console.log(err))}
+    
+    
+       
+    
 
