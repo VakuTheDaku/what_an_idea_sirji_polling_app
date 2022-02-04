@@ -32,7 +32,7 @@ app.set('view engine', 'ejs')
 app.use(routes)
 
 sequelize.sync().then(result=>{
-    
+    // console.log('server started on port: '+process.env.PORT)
     app.listen( process.env.PORT ||3000)
 }).catch(err=>{
     console.log(err)
