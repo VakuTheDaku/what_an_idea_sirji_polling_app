@@ -1,8 +1,12 @@
+const dotenv= require('dotenv')
+dotenv.config()
+
+
 const Sequelize =  require('sequelize')
 const sequelize = new Sequelize('teams', 'root', '', {
-    host: "127.0.0.1",
+    host: process.env.HOST,
     dialect : 'mysql',
-    port: '8111',
+    // port: '8111',
     
   });
 const Team = sequelize.define('Team', {

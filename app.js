@@ -10,7 +10,7 @@ const publicdrc = path.join(__dirname,'./public')
 app.use(express.static(publicdrc))
 var options = {
 	host: process.env.HOST,
-	port: process.env.PORT,
+	// port: process.env.PORT,
 	user: process.env.USER,
 	password: process.env.PASSWORD,
 	database: process.env.DATABASE,
@@ -33,7 +33,7 @@ app.use(routes)
 
 sequelize.sync().then(result=>{
     
-    app.listen(3000)
+    app.listen( process.env.PORT ||3000)
 }).catch(err=>{
     console.log(err)
 })
