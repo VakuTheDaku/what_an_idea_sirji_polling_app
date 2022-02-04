@@ -132,10 +132,14 @@ exports.store=async (req,res,next)=>{
     res.redirect('/')
 }
 exports.logincontro=(req,res,next)=>{
+    const isLoggedIn= req.session.isLoggedIn===true
     passnomatch=false
     username=req.body.name
     password=req.body.password
-    
+    if(isLoggedIn===true){
+        res.redirect('/')
+    }
+    else{
     Team.findAll({where: {name: username}}).then(async (team)=>{
         
         if(team[0]!=null){
@@ -166,6 +170,7 @@ exports.logincontro=(req,res,next)=>{
     
     
     }).catch((err)=>console.log(err))}
+}
     
     
        

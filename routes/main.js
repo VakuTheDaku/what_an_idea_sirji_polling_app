@@ -11,9 +11,16 @@ router.get('/register',(req,res,next)=>{
     }
 })
 router.post('/store',controller.store)
-router.get('/login',(req,res,next)=>{
+router.get('/loginpage',(req,res,next)=>{
+    
+   
     const isLoggedIn= req.session.isLoggedIn===true
+    if(isLoggedIn===true){
+        res.redirect('/')
+    }
+    else{
     res.render('login',{pagetitle: 'Login',isAuthenticated: isLoggedIn, passnomatch: false})
+    }
 })
 router.post('/login',controller.logincontro)
 router.get('/logout',(req,res,next)=>{

@@ -59,13 +59,13 @@
       .cable {
         width: 4px;
         height: 160px;
-        background: #1A5F7A;
+        background: #323249;
       }
       
       .cover {
         width: 200px;
         height: 80px;
-        background: #1A5F7A;
+        background: #323249;
         border-top-left-radius: 50%;
         border-top-right-radius: 50%;
         position: relative;
@@ -136,15 +136,25 @@
       
           }
           
-          .navbar .btn{
+           .btn{
+              background-color:#323249;
+              color:#fff;
+              font-weight:bolder;
+              margin-right: 0;
+              /* margin-top:460px; */
+              border-radius: 0px 0px 27px 0px;
+      
+            }
+            .btnvariant{
               background-color:#086E7D;
               color:#fff;
               font-weight:bolder;
               margin-right: 0;
               /* margin-top:460px; */
-              
+              border-radius: 0px 0px 27px 0px;
       
             }
+            
             .section{
                 /* position: fixed; */
                
@@ -167,7 +177,7 @@
               align-items: baseline;
               height:100vh;
               width: 100%;
-              color:#086E7D;
+              color:#323249;
               /* background-color:#FFC900; */
           }
       
@@ -181,19 +191,29 @@
               z-index:-1;
               position:relative;
               top:0;
-              left:0;
+              left:40%;
               /* background-color:#FFCA03; */
           }
           .content-title{
               font-size:clamp(20px, 58px, 64px);
               position:relative;
               width:100%;
-              top: 50%;
+              top: 200px;
               font-family:funnyFont;
+              
       
           }
-          
-
+          .navbar{
+              height: 20%;
+            background-color: #F9A826;
+            border-radius: 0px 0px 100px 0px;
+          }
+          .down
+          {
+              
+              height: 20%;
+            background-color: #323249;color: #fff;
+          }
 
       </style>
     <title><%= pagetitle %></title>
@@ -208,7 +228,7 @@
         <section class="page">
             <div class="navbar">
                 <div class="navbar-brand">
-                    <h1 class="team-name">Welcome <span style="color: #086E7D;"><%= Teamname %></span>
+                    <h1 class="team-name">Welcome <span style="color: #323249;"><%= Teamname %></span>
                         </h1>
                         </div>
                         <div class="nav-item">
@@ -231,24 +251,24 @@
                 </div>
             </section>
             <section class="content">
-                <h1 class="content-title text-center">
+                <h1 class="content-title text-center animate__animated">
                     what an idea <br>
                     sir ji
                 </h1>
             </section>
         </div>
-       
-        <% if (votesbalance>0) { %><h3 class="alert fixed-bottom alert-info">You have <%= votesbalance %> votes remaining</h3>
+       <div class="down fixed-bottom" > </div>  
+        <% if (votesbalance>0) { %><h3 class="fixed-bottom alert-info" style="background-color: #323249;color: #fff;">You have <span class="text-info"><%= votesbalance %> </span>votes remaining</h3>
         <% } else{ %>
-            <h3 class="alert fixed-bottom alert-danger">You have <%= votesbalance %> votes remaining</h3>
+            <h3 class="fixed-bottom alert-danger" style="background-color: #323249;color: #fff;">You have <span class="text-danger"><%= votesbalance %></span> votes remaining</h3>
             <% } %>  
-            
+        
         </section>
 
 
 
 
-    <section class="page" style="background-color: #8ecae6;">
+    <section class="page" style="background-color: #F9A826;">
 
         
 
@@ -263,7 +283,7 @@
                                         neque magni!</p>
                                     <% if (votesbalance>0) { %>
                                         <form action="/vote1" method="post">
-                                            <button type="submit" btn btn-primary">Vote</button>
+                                            <button class="btnvariant" onclick="alert('are you sure want to vote for Team1')" type="submit" btn btn-primary">Vote</button>
                                         </form>
                                         <% } %>
                                 </div>
@@ -271,7 +291,7 @@
                             
                         
             </section>
-            <section class="page" style="background-color: #219ebc;">
+            <section class="page" style="background-color: #323249;color: #fff;">
                 
                             <h1>Team 2</h1>
                                     
@@ -284,7 +304,7 @@
                                         neque magni!</p>
                                     <% if (votesbalance>0) { %>
                                         <form action="/vote2" method="post">
-                                            <button type="submit" btn btn-primary">Vote</button>
+                                            <button class="btnvariant" onclick="alert('are you sure want to vote for Team2')" type="submit" btn btn-primary">Vote</button>
                                         </form>
                                         <% } %>
                                 </div>
@@ -292,7 +312,7 @@
                             
                         
                    </section>
-                    <section class="page" style="background-color: #023047;">
+                    <section class="page" style="background-color: #F9A826; ">
                     
                             <h1>Team 3</h1>
                                 
@@ -305,14 +325,14 @@
                                         neque magni!</p>
                                     <% if (votesbalance>0) { %>
                                         <form action="/vote3" method="post">
-                                            <button type="submit" btn btn-primary">Vote</button>
+                                            <button class="btnvariant" onclick="alert('are you sure want to vote for Team3')" type="submit" btn btn-primary">Vote</button>
                                         </form>
                                         <% } %>
                                 </div>
                                
                             
                         </section>
-                        <section class="page" style="background-color: #ffb703;">
+                        <section class="page" style="background-color: #323249; color: #fff;">
                         
                            <h1>  Team 4</h1>
                                   
@@ -325,7 +345,7 @@
                                         neque magni!</p>
                                     <% if (votesbalance>0) { %>
                                         <form action="/vote4" method="post">
-                                            <button type="submit" btn btn-primary">Vote</button>
+                                            <button class="btnvariant" onclick="alert('are you sure want to vote for Team4')" type="submit" btn btn-primary">Vote</button>
                                         </form>
                                         <% } %>
 
@@ -333,7 +353,7 @@
                            
                                 
                         </section>
-                        <section class="page" style="background-color: #fb8500;">
+                        <section class="page" style="background-color: #F9A826;">
                         
                             <h1>  Team 5</h1>
                                    
@@ -346,7 +366,7 @@
                                          neque magni!</p>
                                      <% if (votesbalance>0) { %>
                                          <form action="/vote4" method="post">
-                                             <button type="submit" btn btn-primary">Vote</button>
+                                             <button class="btnvariant" onclick="alert('are you sure want to vote for Team5')" type="submit" btn btn-primary">Vote</button>
                                          </form>
                                          <% } %>
  
@@ -375,6 +395,21 @@
                 snap: 1 / (sections.length -1),
                 end: () => "+="+document.querySelector(".section").offsetWidth
             }
+        })
+        let content=document.querySelector('.content-title')
+        console.log(content)
+        content.addEventListener("mouseover",()=>{
+
+         
+        content.classList.add('animate__rubberBand');
+        content.classList.add('animate__rubberBand');
+        console.log(content.classList)
+        })
+        content.addEventListener("mouseout",()=>{
+        content.classList.remove('animate__rubberBand');
+        content.classList.remove('animate__rubberBand');
+
+
         })
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
