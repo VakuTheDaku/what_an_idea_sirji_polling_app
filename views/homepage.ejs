@@ -101,15 +101,15 @@
         width: 500px;
         height: 0px;
         
-        border-left:200px solid transparent;
-        border-right: 200px solid transparent;
-        border-bottom: 1000px solid #FFF89A;
+        border-left:500px solid transparent;
+        border-right: 500px solid transparent;
+        border-bottom: 1500px solid #FFF89A;
         
         
         position: absolute;
-        left: -100px;
+        left: -350px;
         right: 0px;
-        top: 180px;
+        top: 100px;
         margin: 0px auto;
         z-index: 1;
       }
@@ -432,7 +432,7 @@
         gsap.to('.bi', {scrollTrigger:{
         trigger:'.page',
         toggleActions: "restart none none none"
-    }, y: 50, opacity:1, duration: 1,repeat:-1})
+        }, y: 50, opacity:1, duration: 1,repeat:-1})
         gsap.to(sections, {
             xPercent: -100 * (sections.length-1),
 
