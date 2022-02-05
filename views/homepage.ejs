@@ -245,7 +245,7 @@
           .down
           {
             
-            height: 20vh;
+            height: 10%;
             background-color: #323249;color: #fff;
           }
 
@@ -291,11 +291,11 @@
                 </h1>
             </section>
         </div>
-       <div class="down fixed-bottom " >
+       <div class="down fixed-bottom text-left" >
            <div class="container" >
-        <% if (votesbalance>0) { %><h3 class="fixed-bottom alert-info p-2" style="background-color: #323249;color: #fff;">You have <span class="text-info"><%= votesbalance %> </span>votes remaining</h3>
+        <% if (votesbalance>0) { %><h3 class="alert-info p-2" style="background-color: #323249;color: #fff; font-size: medium;">You have <span class="text-info"><%= votesbalance %> </span>votes remaining</h3>
         <% } else{ %>
-            <h3 class="fixed-bottom alert-danger p-2" style="background-color: #323249;color: #fff;">You have <span class="text-danger"><%= votesbalance %></span> votes remaining</h3>
+            <h3 class="alert-danger p-2" style="background-color: #323249;color: #fff; font-size: medium;">You have <span class="text-danger"><%= votesbalance %></span> votes remaining</h3>
             <% } %>  
         </div>
         </div>  
