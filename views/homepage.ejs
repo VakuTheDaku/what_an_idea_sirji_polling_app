@@ -130,14 +130,7 @@
               src: url(./assets/FunSized.ttf);
           }
           
-          .team-name{
-              /* font-size:clamp(20px, 58px, 64px); */
-              position:relative;
-              /* width:100%; */
-              
-              
-      
-          }
+          
           
            .btn{
               background-color:#323249;
@@ -145,8 +138,8 @@
               font-weight:bolder;
               margin-right: 0;
               /* margin-top:460px; */
-              border-radius: 0px 0px 27px 0px;
-      
+              /* border-radius: 0px 0px 27px 0px;
+       */
             }
             .btnvariant{
               background-color:#086E7D;
@@ -194,7 +187,7 @@
               z-index:-1;
               position:relative;
               top:0;
-              left:40%;
+              left:43%;
               /* background-color:#FFCA03; */
           }
           .content-title{
@@ -246,11 +239,11 @@
           .navbar{
               height: 20%;
             background-color: #F9A826;
-            border-radius: 0px 0px 100px 0px;
+            border-bottom-right-radius: 20px;
           }
           .down
           {
-            
+            border-top-left-radius: 20px;
             height: 20%;
             background-color: #323249;color: #fff;
           }
@@ -268,8 +261,8 @@
         <section class="page">
             <div class="navbar">
                 <div class="navbar-brand">
-                    <h1 class="team-name">Welcome <span style="color: #323249;"><%= Teamname %></span>
-                        </h1>
+                   <h5> Welcome <span style="color: #323249;"><%= Teamname %></span></h5>
+                        
                         </div>
                         <div class="nav-item">
                   <form action="/logout" method="get">
@@ -296,14 +289,14 @@
                     sir ji
                 </h1>
             </section>
-        </div>
+        </div>   
        <div class="down fixed-bottom text-center" >
            <div class="container" >
         <% if (votesbalance>0) { %><h3 class="alert-info p-2" style="background-color: #323249;color: #fff; font-size: medium;">You have <span class="text-info"><%= votesbalance %> </span>votes remaining</h3>
         <% } else{ %>
             <h3 class="alert-danger p-2" style="background-color: #323249;color: #fff; font-size: medium;">You have <span class="text-danger"><%= votesbalance %></span> votes remaining</h3>
             <% } %> 
-           
+       
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#F9A826" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
             <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
