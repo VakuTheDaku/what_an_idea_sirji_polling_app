@@ -214,14 +214,14 @@
               z-index:-1;
               position:relative;
               top:0;
-              left:10%;
+              left:30%;
               /* background-color:#FFCA03; */
           }  
           .content-title{
               font-size: xxx-large;
               position:relative;
               width:100%;
-              margin-top: 150px;
+              margin-top: 200px;
               color: white;
               font-family:funnyFont;
               
@@ -235,6 +235,12 @@
                 box-sizing: border-box;
                 
             }
+            .down
+          {
+            
+            height: 30%;
+            background-color: #323249;color: #fff;
+          }
           }
           
           .navbar{
@@ -245,7 +251,7 @@
           .down
           {
             
-            height: 10%;
+            height: 20%;
             background-color: #323249;color: #fff;
           }
 
@@ -272,7 +278,7 @@
                 </div>
             </div>
             <div class="container-fluid">
-            <section class="animation-lamp" style="width: 100px; height: 100px;">
+            <section class="animation-lamp" style="width: 10px; height: 10px; transform: scale(0.5);">
                 <div class="lamp">
 
                     <div class="cable"></div>
@@ -291,13 +297,17 @@
                 </h1>
             </section>
         </div>
-       <div class="down fixed-bottom text-left" >
+       <div class="down fixed-bottom text-center" >
            <div class="container" >
         <% if (votesbalance>0) { %><h3 class="alert-info p-2" style="background-color: #323249;color: #fff; font-size: medium;">You have <span class="text-info"><%= votesbalance %> </span>votes remaining</h3>
         <% } else{ %>
             <h3 class="alert-danger p-2" style="background-color: #323249;color: #fff; font-size: medium;">You have <span class="text-danger"><%= votesbalance %></span> votes remaining</h3>
-            <% } %>  
+            <% } %> 
+           
         </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#F9A826" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+          </svg>
         </div>  
         </section>
 
@@ -419,6 +429,10 @@
     <script>
         
         let sections =gsap.utils.toArray(".page")
+        gsap.to('.bi', {scrollTrigger:{
+        trigger:'.page',
+        toggleActions: "restart none none none"
+    }, y: 50, opacity:1, duration: 1,repeat:-1})
         gsap.to(sections, {
             xPercent: -100 * (sections.length-1),
 
