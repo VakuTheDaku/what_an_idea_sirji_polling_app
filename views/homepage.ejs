@@ -103,7 +103,7 @@
         
         border-left:500px solid transparent;
         border-right: 500px solid transparent;
-        border-bottom: 1300px solid #FFF89A;
+        border-bottom: 1500px solid #FFF89A;
         
         
         position: absolute;
@@ -241,8 +241,8 @@
             .down
           {
             width: 100%;
-            position: absolute;
-            top: 80%;
+            position: relative;
+            bottom: 0;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
             height: 20%;
@@ -269,7 +269,8 @@
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
             height: 20%;
-            background-color: #323249;color: #fff;
+            background-color: transparent;
+            color: #323249;
           }
 
       </style>
@@ -317,13 +318,13 @@
        <div class="down text-center" >
            <div class="container" >
                Vote for the idea that seems to you is the best
-        <% if (votesbalance>0) { %><h3 class="alert-info p-2" style="background-color: #323249;color: #fff; font-size: medium;">You have <span class="text-info"><%= votesbalance %> </span>votes remaining</h3>
+        <% if (votesbalance>0) { %><h3 class="alert-info p-2" style="background-color: transparent;color: #323249; font-size: medium;">You have <span class="text-info"><%= votesbalance %> </span>votes remaining</h3>
         <% } else{ %>
-            <h3 class="alert-danger p-2" style="background-color: #323249;color: #fff; font-size: medium;">You have <span class="text-danger"><%= votesbalance %></span> votes remaining</h3>
+            <h3 class="alert-danger p-2" style="background-color: transparent;color: #323249; font-size: medium;">You have <span class="text-danger"><%= votesbalance %></span> votes remaining</h3>
             <% } %> 
        
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#F9A826" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#323249" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
             <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
           </svg>
         </div>  
