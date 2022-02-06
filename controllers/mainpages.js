@@ -31,7 +31,7 @@ exports.vote1=(req,res,next)=>{
             res.redirect('/')
         }
     }).catch((err)=>console.log(err))
-    Team.findAll({where: {name: 'Team1'}}).then((team)=>{
+    Team.findAll({where: {name: 'Idea1'}}).then((team)=>{
         team[0].votes+=1
         team[0].save()
     }).catch((err)=>console.log(err))
@@ -54,7 +54,7 @@ exports.vote2=(req,res,next)=>{
             res.redirect('/')
         }
     }).catch((err)=>console.log(err))
-    Team.findAll({where: {name: 'Team2'}}).then((team)=>{
+    Team.findAll({where: {name: 'Idea2'}}).then((team)=>{
         team[0].votes+=1
         team[0].save()
     }).catch((err)=>console.log(err))
@@ -78,7 +78,7 @@ exports.vote3=(req,res,next)=>{
             res.redirect('/')
         }
     }).catch((err)=>console.log(err))
-    Team.findAll({where: {name: 'Team3'}}).then((team)=>{
+    Team.findAll({where: {name: 'Idea3'}}).then((team)=>{
         team[0].votes+=1
         team[0].save()
     }).catch((err)=>console.log(err))
@@ -102,7 +102,31 @@ exports.vote4=(req,res,next)=>{
             res.redirect('/')
         }
     }).catch((err)=>console.log(err))
-    Team.findAll({where: {name: 'Team4'}}).then((team)=>{
+    Team.findAll({where: {name: 'Idea4'}}).then((team)=>{
+        team[0].votes+=1
+        team[0].save()
+    }).catch((err)=>console.log(err))
+    res.redirect('/')
+    }
+    else{
+        res.redirect('/')
+    }
+}
+exports.vote5=(req,res,next)=>{
+    
+    const name= req.session.name 
+    if(req.session.isLoggedIn===true ){
+    Team.findAll({where: {name: name}}).then((team)=>{
+        if(team[0].votebalance>0){
+        team[0].votebalance-=1
+        
+        team[0].save()
+        }
+        else{
+            res.redirect('/')
+        }
+    }).catch((err)=>console.log(err))
+    Team.findAll({where: {name: 'Idea5'}}).then((team)=>{
         team[0].votes+=1
         team[0].save()
     }).catch((err)=>console.log(err))

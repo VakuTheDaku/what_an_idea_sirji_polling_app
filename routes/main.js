@@ -34,4 +34,5 @@ router.post('/vote1',controller.vote1)
 router.post('/vote2',controller.vote2)
 router.post('/vote3',controller.vote3)
 router.post('/vote4',controller.vote4)
+router.post('/vote5',controller.vote5)
 module.exports=router
