@@ -210,6 +210,17 @@
               
       
           }
+          .down
+          {
+               width: 100%;
+            position: absolute;
+            top: 80%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            height: 20%;
+            background-color: transparent;
+            color: #323249;
+          }
           @media screen and (min-width:0px) and (max-width:992px) {
             .animation-lamp{
               height:100%;
@@ -241,8 +252,8 @@
             .down
           {
             width: 100%;
-            position: relative;
-            bottom: 0;
+            position: absolute;
+            top: 80vh;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
             height: 20%;
@@ -262,17 +273,7 @@
             border-bottom-right-radius: 20px;
             border-bottom-left-radius: 20px;
           }
-          .down
-          {
-               width: 100%;
-            position: absolute;
-            top: 80%;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            height: 20%;
-            background-color: transparent;
-            color: #323249;
-          }
+          
 
       </style>
     <title><%= pagetitle %></title>
@@ -317,7 +318,7 @@
             </section>
         </div>   
        <div class="down text-center" >
-           <div class="container" >
+           <div class="container " style="color: #323249;" >
                Vote for the idea that seems to you is the best
         <% if (votesbalance>0) { %><h3 class="alert-info p-2" style="background-color: transparent;color: #323249; font-size: medium;">You have <span class="text-info"><%= votesbalance %> </span>votes remaining</h3>
         <% } else{ %>
