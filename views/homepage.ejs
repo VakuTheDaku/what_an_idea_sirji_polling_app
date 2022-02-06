@@ -116,6 +116,16 @@
       
       
       </style>
+      <script>
+          function show_alert(){
+            if(!confirm("Do you really want to vote for Team1 ?")){
+                return false
+            }
+            else{
+                this.form.submit()
+            }
+        }
+      </script>
       <style>
       
           body,html{
@@ -292,6 +302,7 @@
         </div>   
        <div class="down fixed-bottom text-center" >
            <div class="container" >
+               Vote for the idea that seems to you is the best
         <% if (votesbalance>0) { %><h3 class="alert-info p-2" style="background-color: #323249;color: #fff; font-size: medium;">You have <span class="text-info"><%= votesbalance %> </span>votes remaining</h3>
         <% } else{ %>
             <h3 class="alert-danger p-2" style="background-color: #323249;color: #fff; font-size: medium;">You have <span class="text-danger"><%= votesbalance %></span> votes remaining</h3>
@@ -312,27 +323,31 @@
         
 
                                 
-                                <h1>    Team 1</h1>
-                                
+                                <div class="card" style="height: 100vh; background-color: #F9A826;">
+                                <div class="card-title text-center pt-4"><h2>Idea 1</h2></div>
                                 <div class="card-body">
+                                    
                                     <h5 class="card-title">Abstract</h5>
                                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Possimus, reprehenderit velit exercitationem dolorem atque quod quos, quas modi
                                         odit culpa facere impedit repellendus ipsam, quibusdam est assumenda architecto
                                         neque magni!</p>
                                     <% if (votesbalance>0) { %>
-                                        <form action="/vote1" method="post">
-                                            <button class="btnvariant" onclick="alert('are you sure want to vote for Team1')" type="submit" btn btn-primary">Vote</button>
+                                        <form action="/vote1" method="post" onsubmit="if(!confirm('Do you really want to vote for Team1 ?')){
+                                            return false
+                                        }">
+                                            <button class="btnvariant" type="submit" >Vote</button>
                                         </form>
                                         <% } %>
                                 </div>
-                            
+                            </div>
                             
                         
             </section>
             <section class="page" style="background-color: #323249;color: #fff;">
                 
-                            <h1>Team 2</h1>
+                <div class="card" style="height: 100vh; background-color: #323249;">
+                    <div class="card-title text-center pt-4"><h2>Idea 2</h2></div>
                                     
                                
                                 <div class="card-body">
@@ -342,18 +357,21 @@
                                         odit culpa facere impedit repellendus ipsam, quibusdam est assumenda architecto
                                         neque magni!</p>
                                     <% if (votesbalance>0) { %>
-                                        <form action="/vote2" method="post">
-                                            <button class="btnvariant" onclick="alert('are you sure want to vote for Team2')" type="submit" btn btn-primary">Vote</button>
+                                        <form action="/vote2" method="post" onsubmit="if(!confirm('Do you really want to vote for Team2 ?')){
+                                            return false
+                                        }">
+                                            <button class="btnvariant" type="submit" >Vote</button>
                                         </form>
                                         <% } %>
                                 </div>
-                            
+                            </div>
                             
                         
                    </section>
                     <section class="page" style="background-color: #F9A826; ">
                     
-                            <h1>Team 3</h1>
+                        <div class="card" style="height: 100vh; background-color: #F9A826;">
+                            <div class="card-title text-center pt-4"><h2>Idea 3</h2></div>
                                 
                                 
                                 <div class="card-body">
@@ -363,17 +381,20 @@
                                         odit culpa facere impedit repellendus ipsam, quibusdam est assumenda architecto
                                         neque magni!</p>
                                     <% if (votesbalance>0) { %>
-                                        <form action="/vote3" method="post">
-                                            <button class="btnvariant" onclick="alert('are you sure want to vote for Team3')" type="submit" btn btn-primary">Vote</button>
+                                        <form action="/vote3" method="post" onsubmit="if(!confirm('Do you really want to vote for Team3 ?')){
+                                            return false
+                                        }">
+                                            <button class="btnvariant" type="submit" >Vote</button>
                                         </form>
                                         <% } %>
                                 </div>
                                
-                            
+                            </div>
                         </section>
                         <section class="page" style="background-color: #323249; color: #fff;">
                         
-                           <h1>  Team 4</h1>
+                            <div class="card" style="height: 100vh; background-color: #323249;">
+                                <div class="card-title text-center pt-4"><h2>Idea 4</h2></div>
                                   
                                
                                 <div class="card-body">
@@ -383,18 +404,21 @@
                                         odit culpa facere impedit repellendus ipsam, quibusdam est assumenda architecto
                                         neque magni!</p>
                                     <% if (votesbalance>0) { %>
-                                        <form action="/vote4" method="post">
-                                            <button class="btnvariant" onclick="alert('are you sure want to vote for Team4')" type="submit" btn btn-primary">Vote</button>
+                                        <form action="/vote4" method="post" onsubmit="if(!confirm('Do you really want to vote for Team4 ?')){
+                                            return false
+                                        }">
+                                            <button class="btnvariant" type="submit" >Vote</button>
                                         </form>
                                         <% } %>
 
                                 </div>
-                           
+                           </div>
                                 
                         </section>
                         <section class="page" style="background-color: #F9A826;">
                         
-                            <h1>  Team 5</h1>
+                            <div class="card" style="height: 100vh; background-color: #F9A826;">
+                                <div class="card-title text-center pt-4"><h2>Idea 5</h2></div>
                                    
                                 
                                  <div class="card-body">
@@ -404,14 +428,16 @@
                                          odit culpa facere impedit repellendus ipsam, quibusdam est assumenda architecto
                                          neque magni!</p>
                                      <% if (votesbalance>0) { %>
-                                         <form action="/vote4" method="post">
-                                             <button class="btnvariant" onclick="alert('are you sure want to vote for Team5')" type="submit" btn btn-primary">Vote</button>
-                                         </form>
+                                        <form action="/vote5" method="post" onsubmit="if(!confirm('Do you really want to vote for Team5 ?')){
+                                            return false
+                                        }">
+                                            <button class="btnvariant" type="submit" >Vote</button>
+                                        </form>
                                          <% } %>
  
                                  </div>
                             
-                                 
+                                </div> 
                          </section>
                 </div>
                 <% } else { %>
@@ -454,6 +480,7 @@
 
 
         // })
+        
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
