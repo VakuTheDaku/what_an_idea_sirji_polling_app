@@ -161,27 +161,27 @@
       
             }
             
-            .section{
+           /* .section{ */
                 /* position: fixed; */
-               
+/*                
                 left: 0;
                 width: 600%;
                 height: 100vh;
                 display: flex;
 
-            }
+            }  */
             .page{
                 position: relative;
                 
                 width: 100%;
-                height: 100vh;
-                box-sizing: border-box;
+                height: max-content;
+                
                 
             }
             .container-fluid{
               position: relative;
               align-items: baseline;
-              height:100vh;
+              height:max-content;
               width: 100%;
               color:#323249;
               /* background-color:#FFC900; */
@@ -234,7 +234,7 @@
                 position: relative;
                 
                 width: 100%;
-                height: 100vh;
+                height: max-content;
                 box-sizing: border-box;
                 
             }
@@ -244,16 +244,25 @@
             height: 30%;
             background-color: #323249;color: #fff;
           }
+          .pageone{
+              height: 100vh;
           }
-          
+          }
+          .pageone{
+              height: 100vh;
+          }
           .navbar{
               height: 20%;
             background-color: #F9A826;
             border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
           }
           .down
-          {
+          { width: 100%;
+            position: absolute;
+            top: 80%;
             border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
             height: 20%;
             background-color: #323249;color: #fff;
           }
@@ -267,8 +276,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <% if(isAuthenticated) {%>
         
-    <div class="section">
-        <section class="page">
+    
+        <section class="pageone">
             <div class="navbar">
                 <div class="navbar-brand">
                    <h5> Welcome <span style="color: #323249;"><%= Teamname %></span></h5>
@@ -300,7 +309,7 @@
                 </h1>
             </section>
         </div>   
-       <div class="down fixed-bottom text-center" >
+       <div class="down text-center" >
            <div class="container" >
                Vote for the idea that seems to you is the best
         <% if (votesbalance>0) { %><h3 class="alert-info p-2" style="background-color: #323249;color: #fff; font-size: medium;">You have <span class="text-info"><%= votesbalance %> </span>votes remaining</h3>
@@ -323,21 +332,45 @@
         
 
                                 
-                                <div class="card" style="height: 100vh; background-color: #F9A826;">
+                                <div class="card" style="height: max-content; background-color: #F9A826;">
                                 <div class="card-title text-center pt-4"><h2>Idea 1</h2></div>
                                 <div class="card-body">
-                                    
-                                    <h5 class="card-title">Abstract</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Possimus, reprehenderit velit exercitationem dolorem atque quod quos, quas modi
-                                        odit culpa facere impedit repellendus ipsam, quibusdam est assumenda architecto
-                                        neque magni!</p>
+                                    <div class="container">
+                                    <h5 class="card-title"><b>Question</b></h5>
+                                    <p class="card-text">Procurement, distribution and transportation of liquid hydrogen is considered as the main hindrance in the success of many zero emission concepts like Airbus’ ZEROe project. As a budding engineer, which solution based approach would you be considering to tackle this problem.</p>
+                                    <h5 class="card-title"><b>Proposed Solution</b></h5>
+                                    <p class="card-text">Replacement of liquid hydrogen as a fuel would be our solution to a specific problem. How if you may ask? What if we tell you, we could transform waste into fuel? As we all know everyday millions and millions of waste are dumped in our localities, and the use of these generated wastes have been only,
+                                        A)	A home for the poor
+                                        B)	To place to obtain the recyclable wastes
+                                        Fuel has always been something which is highly in demand in whatever era of life we are in, so our idea is quite a sustainable idea, where we have overseen the risk of reducing the environmental pollution.
+                                        “Prevention is better than cure” is one of the principles that led us to this solution. We could ensure that every joule of energy will be extracted from our valuable resources. 
+                                        Principle used: Pyrolysis is the thermal decomposition of materials in an inert atmosphere. First, organic wastes are gathered, and then, their size is reduced into tiny particles. Next, the broken-down wastes are fed into a pyrolysis reactor which decomposes the waste materials in the presence of a catalyst. This process changes the chemical properties of the waste materials. The waste materials including plastics are converted into useful substances like fuel, oil, gas, and manure. The products of the reaction are then separated using the process of fractionalisation. <br>
+                                        <img src="./images/Picture1.png" class="my-4 img-fluid" alt="" srcset=""> <br>
+                                        But how can people be connected to this process? We all have ATM machines in our locality, why was it installed in our localities? To make access easier. Similarly, what if we had a machine that does the above mentioned operation installed in every locality?
+                                        Each person in the locality will be provided with a unique ID card after their registration to our service through an internet facility, a machine inside which a pyrolysis reactor mechanism will be installed at each locality. It's a subscription model, as the trend of proclaiming eco friendly products is popular, providing a solution for their waste disposal will surely attract the crowd in subscribing to this solution. If a person wishes to decompose their waste he/she should follow the following steps:
+                                        A)	First the user should enter the unique card they received.
+                                        B)	They must select what type of waste they are planning to decompose.
+                                        C)	They should also select whether they would like to procure the by-products.
+                                        D)	A bottom tray slides out where they can decompose the waste.
+                                        E)	Once the decomposed waste is processed, products such as oil manure and gas will slide out from another tray.
+                                        It's a two way beneficial solution as the user has the option to claim the byproducts obtained from this that is, manure,fuel, gas. or they could choose not to claim this, in that case we will handover a small incentive to the person which will be present as credit in their card.
+                                        <br>
+                                        <img src="./images/Picture2.png" class="my-4 img-fluid" alt="" srcset=""> <br>
+                                        <img src="./images/Picture3.png" class="my-4 img-fluid" alt="" srcset=""> <br>
+                                        We also have revenue from ads as we will have a screen for this machine, so we could display ads from time to time.
+                                        We could also have dealerships with these poor slum people for waste collection and by doing so, we can uplift their life, keep the slums clean, and also provide fuel to the companies which have launched initiatives such as Airbus in large amounts.
+                                        Wastes are always generated until man survives on earth, so the problem of procuring, distribution and availability of fuel obtained from waste is not something to worry about anymore.
+
+                                    </p>
+                                </div>
                                     <% if (votesbalance>0) { %>
+                                        <div class="conatiner text-center mt-4">
                                         <form action="/vote1" method="post" onsubmit="if(!confirm('Do you really want to vote for Team1 ?')){
                                             return false
                                         }">
-                                            <button class="btnvariant" type="submit" >Vote</button>
+                                            <button class="btnvariant " type="submit" >Vote</button>
                                         </form>
+                                    </div>
                                         <% } %>
                                 </div>
                             </div>
@@ -346,22 +379,45 @@
             </section>
             <section class="page" style="background-color: #323249;color: #fff;">
                 
-                <div class="card" style="height: 100vh; background-color: #323249;">
+                <div class="card" style="height: max-content; background-color: #323249;">
                     <div class="card-title text-center pt-4"><h2>Idea 2</h2></div>
                                     
                                
                                 <div class="card-body">
-                                    <h5 class="card-title">Abstract</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Possimus, reprehenderit velit exercitationem dolorem atque quod quos, quas modi
-                                        odit culpa facere impedit repellendus ipsam, quibusdam est assumenda architecto
-                                        neque magni!</p>
+                                    
+                                        <div class="container">
+                                            <h5 class="card-title"><b>Question</b></h5>
+                                            <p class="card-text">The unfortunate incident in which students were electrocuted by faulty power lines received a lot of attention. Ideate a cost-effective solution to alert authorities or cut off power to the lines without affecting other sections. 
+ 
+                                            </p>
+                                            <h5 class="card-title"><b>Proposed Solution</b></h5>
+                                         <p class="card-text"> It is so sad that we lost many life in our country and around the world due to faulty power lines. 
+                                            Here we suggest an idea which would find an answer for the problem. It’s called  computerized power line.
+                                           As usual power from the power plant are taken to local station by overhead large power lines. From there Power is transported in a insulated wire using a specially designed underground tunnel to the sub-station. The three phase wires are designed such that they are at particular distance apart , fixed on the top region of the tunnel. It’s also have a thin metal sheet which have holes digged on it on the bottom of the tunnel. There is enough space for working of a robot which is provided with special sensors to detect water presence , animals or cutting in the insulation which regularly check the safety and security.
+                                         At substation the power is then distributed through a overhead power line ,we call this system as Branch.
+                                         <br>
+                                         <br>
+                                         <b>What happens at sub-stations? :-</b>
+                                         Power from the main underground power line   is transported to the overhead power line through a transformer ,fuse and a switch controlled by computer. 
+                                        <br> <br><b>Functioning :-</b>
+                                         Using a step down transformer the high voltage is converted into 220 Volt and then it moved to a fuse. Here we introduce a computer (C1) which is powered by the output from the fuse, which can control (off) two switches S1 and S2 . Switch S1 connect the output of the fuse to Branch and S2 Is the switch which is placed between the power carrying wire in the tunnel.
+                                          The overhead power line contain a U shaped thin metal net below the power lines, which is connected to a computer (C°1) and its grounded ( C°1 is in any of the electric post ) . This computer passes signal to C1 when it is powered and as a result S1 goes off.
+                                     <br> <br> <b>What happens when power line breaks or hang?</b>
+                                              Surely The power carrying line will touch the metal net. As a result the computer C°1 is powered and pass a  signal to C1, which switches off S1 . So this Branch  is dead and none can be electrocuted.
+                                       At the same time other branches are live and supply power.
+                                      In case power line in the tunnel breaks then it will touch the metal sheet , which will be sensed by the computer C1 and  S2 get off , which can rarely happen.
+                                     <br><b> Building : </b>One branch may include a village or a street . Each Branch can have more than one computer (for eg C°1,C°2,C°3etc) with provide signal to main computer C1.
+                                         Thank you
+                                      </p>
                                     <% if (votesbalance>0) { %>
+                                        <div class="container text-center mt-4">
                                         <form action="/vote2" method="post" onsubmit="if(!confirm('Do you really want to vote for Team2 ?')){
                                             return false
                                         }">
                                             <button class="btnvariant" type="submit" >Vote</button>
                                         </form>
+                                    </div>
+                                    
                                         <% } %>
                                 </div>
                             </div>
@@ -370,45 +426,64 @@
                    </section>
                     <section class="page" style="background-color: #F9A826; ">
                     
-                        <div class="card" style="height: 100vh; background-color: #F9A826;">
+                        <div class="card" style="height: max-content; background-color: #F9A826;">
                             <div class="card-title text-center pt-4"><h2>Idea 3</h2></div>
                                 
                                 
                                 <div class="card-body">
-                                    <h5 class="card-title">Abstract</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Possimus, reprehenderit velit exercitationem dolorem atque quod quos, quas modi
-                                        odit culpa facere impedit repellendus ipsam, quibusdam est assumenda architecto
-                                        neque magni!</p>
+                                    <div class="container">
+                                        <h5 class="card-title"><b>Question</b></h5>
+                                        <p class="card-text">Artificial intelligence (AI) offers a wide range of practical applications across sectors, and it has the potential  to bring about a paradigm shift in how we view farming today. AI-powered solutions will help farmers to not only do more with less, but also enhance crop quality. State innovative ideas by which artificial intelligence can assist in increasing agricultural productivity.</p>
+                                        <h5 class="card-title"><b>Proposed Solution</b></h5>
+                                        <p class="card-text">Smart Green House with  a mobile app :We are adding a couple of sensors to make ordinary Green House smarter. This green house can measure soil moisture, temperature, humidity, water temperature detect movement and display information on the screen. 
+                                            <br> <br>
+                                            Weeding robot: it works together with another robot whose job is to monitor the crops and map the field. The weeding robot use this information to locate the weeds and destroy them using mini electrical lightning strikes.
+                                            <br> <br>
+                                            Aqua pods: high-tech camera-powered system that can track the number of fish ,how many fish are eating ,their size these information can be used to suggest the feed amounts. This leads to less wasted food and greater profit margins.
+                                            <br><br>
+                                            Hand held plant disease detector: Works based on the concentration of Volatile organic compounds. This technology analyzes those chemicals ,detects and identifies the disease.
+                                            <br> <br>
+                                            Virtual livestock sustainable farming  :This technology comprises a collar device worn by cattle, sheep or any livestock. It enables us to check the movement and grazing of the animals directly from our smartphones .Also special movement sensors can be used to sense their movement and see if they are sick. 
+                                            <br><br>
+                                            AI in rubber tapping : This robot takes the weather into account to cut trees at optimal times and collects the sap.
+                                            <br><br>
+                                            AI in harvesting : A flying autonomous robot  which uses AI to identify and pick fruit. The robot can work 24 hours a day and picks only ripe fruit.
+                                            </p>
                                     <% if (votesbalance>0) { %>
+                                        <div class="container text-center mt-4">
                                         <form action="/vote3" method="post" onsubmit="if(!confirm('Do you really want to vote for Team3 ?')){
                                             return false
                                         }">
                                             <button class="btnvariant" type="submit" >Vote</button>
                                         </form>
+                                    </div>
                                         <% } %>
                                 </div>
-                               
+                               </div>
                             </div>
                         </section>
                         <section class="page" style="background-color: #323249; color: #fff;">
                         
-                            <div class="card" style="height: 100vh; background-color: #323249;">
+                            <div class="card" style="height: max-content; background-color: #323249;">
                                 <div class="card-title text-center pt-4"><h2>Idea 4</h2></div>
                                   
                                
                                 <div class="card-body">
-                                    <h5 class="card-title">Abstract</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Possimus, reprehenderit velit exercitationem dolorem atque quod quos, quas modi
-                                        odit culpa facere impedit repellendus ipsam, quibusdam est assumenda architecto
-                                        neque magni!</p>
+                                    <div class="container">
+                                        <h5 class="card-title"><b>Question</b></h5>
+                                        <p class="card-text">Assuming that the current trend of periodic flooding in Kerala continues, propose changes that can be made to the construction methods of high rise apartments and commercial buildings. The buildings must not sustain permanent damages or require substantial strengthening
+                                            </p>
+                                            <h5 class="card-title"><b>Proposed Solution</b></h5>   
+                                        
+                                    <p class="card-text">We can create buildings or structures which are put on a form of bearing or shock absorber – sometimes as simple as blocks of rubber about 30-50cm (12 to 20in) thick. This allows the buildings to take whatever impact and balance on these shock absorbing materials. This also allows the buildings to have extra height to prevent water to get in. One of the primary performance requirements for any residential building and most commercial buildings is that it should keep the interior space dry. All roofs and walls must therefore shed rainwater, and resist water penetration. For example, roof drainage design must minimize the possibility of ponding water, and existing buildings with flat roofs must be inspected to determine compliance with this requirement. The cause of Kerala's flood lies also in drainage where we can introduce  plastics roads. Australia, Indonesia, India, the United Kingdom, the United States, and many other countries have used technology which can incorporate plastic waste into an asphalt mix. In India, 703 km length of National Highways have been constructed using waste plastic this also reduces plastic pollution and use as of efficient drainages.</p>
                                     <% if (votesbalance>0) { %>
+                                        <div class="container text-center mt-4">
                                         <form action="/vote4" method="post" onsubmit="if(!confirm('Do you really want to vote for Team4 ?')){
                                             return false
                                         }">
                                             <button class="btnvariant" type="submit" >Vote</button>
                                         </form>
+                                    </div>
                                         <% } %>
 
                                 </div>
@@ -417,29 +492,44 @@
                         </section>
                         <section class="page" style="background-color: #F9A826;">
                         
-                            <div class="card" style="height: 100vh; background-color: #F9A826;">
+                            <div class="card" style="height: max-content; background-color: #F9A826;">
                                 <div class="card-title text-center pt-4"><h2>Idea 5</h2></div>
                                    
                                 
                                  <div class="card-body">
-                                     <h5 class="card-title">Abstract</h5>
-                                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                         Possimus, reprehenderit velit exercitationem dolorem atque quod quos, quas modi
-                                         odit culpa facere impedit repellendus ipsam, quibusdam est assumenda architecto
-                                         neque magni!</p>
+                                    <div class="container">
+                                        <h5 class="card-title"><b>Question</b></h5>
+                                        <p class="card-text">The Bhopal gas tragedy is remembered as one of the world's worst chemical disasters. According to Bhopal campaign groups' surveys, this toxic waste, which contains six of the persistent organic pollutants banned by the UN for their highly poisonous effects on the environment and human health, has now reached 42 areas in Bhopal and is still spreading. After analyzing the current situation, devise a solution that will allow the area to be inhabited.
+                                     </p>
+                                     <h5 class="card-title"><b>Proposed Solution</b></h5>  
+                                            <p class="card-text">Though years have passed since that very gruesome night, the name Bhopal Gas Tragedy still manages to send a shiver down our spine.38 years have passed since then, but to no avail, the people of Bhopal still continues to live their lives, shedding tears over their lost ones and the ones they are yet to loose. The government bodies failed miserably in plotting a standard clean up protocol so as to deliver the justice, the people of Bhopal deserved a long time ago. Long before the tragedy, waste management protocols undergone by Union Carbide Ltd never even met the standards, which lead to seepage of hazardous, corrosive chemicals polluting water and soil. Not a single solution helps in re-inhabiting the place to a stage where livelihood continues to thrive in its glory without having to look over the sorrows that still haunts generations till date and the ones yet to come. In order to work out a feasible plan of action regarding the clean-up drive, implementation of a series of steps which are as follows is necessary .
+                                                <br><br>
+                                                <b>MAPPING OF AFFECTED SITES :  </b>Mapping of affected sites should be the first and foremost plan of action to be implemented as it helps to visualize the distribution of severity in respective regions. Mapping can be implemented by combining geo stationary mapping technologies and database collected from surveys conducted by international organizations and various other NGO’s, allowing us to visually explore the affected areas. In order to boost the resolving capacity of these mapping system to streets and residential areas, public transportation systems can be used as a source of data collection, where we would be modifying these vehicles with lab grade air monitoring sensors and equipment’s thus converting them to a mobile air monitoring fleet free of cost. 
+                                                <br><br>
+                                                <b>IMPLIMENTATION OF REMEDIATION TECHNOLOGIES (FULLERENE SELECTIVE ADSORPTION) : </b>bGovernment has only been successful in implementation of traditional remediation techniques such as soil excavation, disposal to landfills, pump and treat etc. But now what we require is more of a permanent means of pollution control. Carbon and its activated components had always been in the field of pollution treatment arena. Fullerene, an allotrope of carbon is widely used in chemical synthesis, for its selective adsorption properties. But the selective adsorption capacity of theirs have never been utilized to the fullest. Selective adsorption of fullerene is due to the presence of interstitial sites, acting as a perfect trap, whose dimensions can further can be manipulated to ones will. Organic Pollutants can be removed selectively by categorizing on basis of their dimension. Once categorized, different combinations of fullerene can be synthesized by varying their interstitial sites in accordance to the molecule to be trapped and removed. Recent studies in the field of fullerenes have proved its efficiency in selectively removing CO2 from a gas mixture under an applied electric field, allowing desorption of the gas as well, thus allowing us to control the percentage of remnants. Again, imparting of this cutting edge technique to our current filtration systems would result in an subsequent spike in its efficiency, cost effectively.
+                                                
+                                                Finally, this issue could never be tackled and would go on for generations yet to come, unless the political dominance over it is subsequently reduced to none and the involved higher authorities to start viewing it as an environmental rather than a political issue.
+                                                 <br><br>
+                                                <b>REFERENCES :</b>
+                                                1 . Joshua S Apte,Kyle P Messier,Shazad Ghani,Michael Brauer. High-Resolution Air Pollution Mapping with Google Street View Cars. https://pubs.acs.org/doi/10.1021/acs.est.7b00891
+                                                <br>
+                                                2 . Adnan Ali Khan,Rashid Ahmad,Ifthikar Ahmad. Selective adsorption of CO2 from gas mixture . https://www.sciencedirect.com/science/article/abs/pii/S1093326320305957
+                                                </p>
                                      <% if (votesbalance>0) { %>
+                                        <div class="container text-center mt-4">
                                         <form action="/vote5" method="post" onsubmit="if(!confirm('Do you really want to vote for Team5 ?')){
                                             return false
                                         }">
                                             <button class="btnvariant" type="submit" >Vote</button>
                                         </form>
+                                    </div>
                                          <% } %>
  
                                  </div>
                             
                                 </div> 
                          </section>
-                </div>
+                
                 <% } else { %>
                     <h2 class="alert alert-warning">Login with your team id and secret code to vote</h2>
                 <% } %>
@@ -447,24 +537,24 @@
  
     <script>
         
-        let sections =gsap.utils.toArray(".page")
+        // let sections =gsap.utils.toArray(".page")
         gsap.to('.bi', {scrollTrigger:{
         trigger:'.page',
         toggleActions: "restart none none none"
         }, y: 20, opacity:1, duration: 1,repeat:-1})
-        gsap.to(sections, {
-            xPercent: -100 * (sections.length-1),
+        // gsap.to(sections, {
+        //     xPercent: -100 * (sections.length-1),
 
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".section",
+        //     ease: "none",
+        //     scrollTrigger: {
+        //         trigger: ".section",
                 
-                pin: true,
-                scrub: 1,
-                snap: 1 / (sections.length -1),
-                end: () => "+="+document.querySelector(".section").offsetWidth
-            }
-        })
+        //         pin: true,
+        //         scrub: 1,
+        //         snap: 1 / (sections.length -1),
+        //         end: () => "+="+document.querySelector(".section").offsetWidth
+        //     }
+        // })
         // let content=document.querySelector('.content-title')
         // console.log(content)
         // content.addEventListener("mouseover",()=>{
