@@ -221,6 +221,13 @@
             background-color: transparent;
             color: #323249;
           }
+          .center {
+  margin-left: auto;
+  margin-right: auto;
+}
+            td,th {
+                padding: 50px;
+            }
           @media screen and (min-width:0px) and (max-width:992px) {
             .animation-lamp{
               height:100%;
@@ -319,11 +326,11 @@
         </div>   
        <div class="down text-center" >
            <div class="container " style="color: #323249;" >
-               Vote for the idea that seems to you is the best
-        <% if (votesbalance>0) { %><h3 class="alert-info p-2" style="background-color: transparent;color: #323249; font-size: medium;">You have <span class="text-info"><%= votesbalance %> </span>votes remaining</h3>
+               Sorry! The voting is closed
+        <!-- <% if (votesbalance>0) { %><h3 class="alert-info p-2" style="background-color: transparent;color: #323249; font-size: medium;">You have <span class="text-info"><%= votesbalance %> </span>votes remaining</h3>
         <% } else{ %>
             <h3 class="alert-danger p-2" style="background-color: transparent;color: #323249; font-size: medium;">You have <span class="text-danger"><%= votesbalance %></span> votes remaining</h3>
-            <% } %> 
+            <% } %>  -->
        
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#323249" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
@@ -380,7 +387,7 @@
 
                                     </p>
                                 </div>
-                                    <% if (votesbalance>0) { %>
+                                    <!-- <% if (votesbalance>0) { %>
                                         <div class="conatiner text-center mt-4">
                                         <form action="/vote1" method="post" onsubmit="if(!confirm('Do you really want to vote for Idea 1 ?')){
                                             return false
@@ -388,7 +395,7 @@
                                             <button class="btnvariant " type="submit" >Vote</button>
                                         </form>
                                     </div>
-                                        <% } %>
+                                        <% } %> -->
                                 </div>
                             </div>
                             
@@ -427,7 +434,7 @@
                                      <b> Building : </b>One branch may include a village or a street . Each Branch can have more than one computer (for eg C°1,C°2,C°3etc) with provide signal to main computer C1.
                                          Thank you
                                       </p>
-                                    <% if (votesbalance>0) { %>
+                                    <!-- <% if (votesbalance>0) { %>
                                         <div class="container text-center mt-4">
                                         <form action="/vote2" method="post" onsubmit="if(!confirm('Do you really want to vote for Idea 2 ?')){
                                             return false
@@ -436,7 +443,7 @@
                                         </form>
                                     </div>
                                     
-                                        <% } %>
+                                        <% } %> -->
                                 </div>
                             </div>
                             
@@ -467,7 +474,7 @@
                                             <br><br>
                                             AI in harvesting : A flying autonomous robot  which uses AI to identify and pick fruit. The robot can work 24 hours a day and picks only ripe fruit.
                                             </p>
-                                    <% if (votesbalance>0) { %>
+                                    <!-- <% if (votesbalance>0) { %>
                                         <div class="container text-center mt-4">
                                         <form action="/vote3" method="post" onsubmit="if(!confirm('Do you really want to vote for Idea 3 ?')){
                                             return false
@@ -475,7 +482,7 @@
                                             <button class="btnvariant" type="submit" >Vote</button>
                                         </form>
                                     </div>
-                                        <% } %>
+                                        <% } %> -->
                                 </div>
                                </div>
                             </div>
@@ -494,7 +501,7 @@
                                             <h5 class="card-title"><b>Proposed Solution</b></h5>   
                                         
                                     <p class="card-text">We can create buildings or structures which are put on a form of bearing or shock absorber – sometimes as simple as blocks of rubber about 30-50cm (12 to 20in) thick. This allows the buildings to take whatever impact and balance on these shock absorbing materials. This also allows the buildings to have extra height to prevent water to get in. One of the primary performance requirements for any residential building and most commercial buildings is that it should keep the interior space dry. All roofs and walls must therefore shed rainwater, and resist water penetration. For example, roof drainage design must minimize the possibility of ponding water, and existing buildings with flat roofs must be inspected to determine compliance with this requirement. The cause of Kerala's flood lies also in drainage where we can introduce  plastics roads. Australia, Indonesia, India, the United Kingdom, the United States, and many other countries have used technology which can incorporate plastic waste into an asphalt mix. In India, 703 km length of National Highways have been constructed using waste plastic this also reduces plastic pollution and use as of efficient drainages.</p>
-                                    <% if (votesbalance>0) { %>
+                                    <!-- <% if (votesbalance>0) { %>
                                         <div class="container text-center mt-4">
                                         <form action="/vote4" method="post" onsubmit="if(!confirm('Do you really want to vote for Idea 4 ?')){
                                             return false
@@ -502,7 +509,7 @@
                                             <button class="btnvariant" type="submit" >Vote</button>
                                         </form>
                                     </div>
-                                        <% } %>
+                                        <% } %> -->
 
                                 </div>
                            </div>
@@ -533,7 +540,7 @@
                                                 <br>
                                                 2 . Adnan Ali Khan,Rashid Ahmad,Ifthikar Ahmad. Selective adsorption of CO2 from gas mixture . https://www.sciencedirect.com/science/article/abs/pii/S1093326320305957
                                                 </p>
-                                     <% if (votesbalance>0) { %>
+                                     <!-- <% if (votesbalance>0) { %>
                                         <div class="container text-center mt-4">
                                         <form action="/vote5" method="post" onsubmit="if(!confirm('Do you really want to vote for Idea 5 ?')){
                                             return false
@@ -541,9 +548,45 @@
                                             <button class="btnvariant" type="submit" >Vote</button>
                                         </form>
                                     </div>
-                                         <% } %>
+                                         <% } %> -->
  
                                  </div>
+                            
+                                </div> 
+                         </section>
+                         <section class="page" style="background-color: #F9A826;">
+                        
+                            <div class="card" style="height: max-content; background-color: #F9A826;">
+                                <div class="card-title text-center pt-4"><h2>Results</h2></div>
+                                   
+                                
+                                
+                                    <div class="container text-center">
+                                        <table class="center">
+                                            <tr>
+                                              <th >Idea</th>
+                                              <th>Votes</th>
+                                              
+                                            </tr>
+                                            <tr>
+                                              <td>Idea 1</td>
+                                              <td><%= list[0] %></td>
+                                              </tr>
+                                              <tr><td>Idea 2</td>
+                                                  <td><%= list[1] %></td></tr>
+                                              <tr> <td>Idea 3</td>
+                                                <td><%= list[2] %></td></tr>
+                                              <tr><td>Idea 4</td>
+                                                <td><%= list[3] %></td></tr>
+                                              <tr> <td>Idea 5</td>
+                                                <td><%= list[4] %></td></tr>
+                                             
+                                              
+                                            </tr>
+                                            
+                                          </table>
+                                    </div>
+                                 
                             
                                 </div> 
                          </section>

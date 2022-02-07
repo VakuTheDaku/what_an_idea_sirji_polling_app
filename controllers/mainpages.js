@@ -3,139 +3,42 @@ const { redirect } = require('express/lib/response')
 var Team=require('../models/model')
 exports.mainpage=(req,res,next)=>{
     const isLoggedIn= req.session.isLoggedIn===true
+ 
     if(isLoggedIn){
         const name= req.session.name
-        Team.findAll({where: {name: name}}).then((team)=>{
+        Team.findAll({where: {name: 'Idea1'}}).then((team)=>{
+            vote1=team[0].votes
             
-            req.session.votebalance=team[0].votebalance
+        }).catch((err)=>console.log(err))
+        Team.findAll({where: {name: 'Idea2'}}).then((team)=>{
             
-            res.render('homepage',{pagetitle: 'Homepage',Teamname:  req.session.name,isAuthenticated: isLoggedIn, votesbalance: req.session.votebalance})
-
-    }).catch((err)=>console.log(err))
+            vote2=team[0].votes
+            
+            }).catch((err)=>console.log(err))
+            Team.findAll({where: {name: 'Idea3'}}).then((team)=>{
+                    
+                vote3=team[0].votes
+                
+        }).catch((err)=>console.log(err))
+        Team.findAll({where: {name: 'Idea4'}}).then((team)=>{
+                    
+            vote4=team[0].votes
+            
+        }).catch((err)=>console.log(err))
+        Team.findAll({where: {name: 'Idea5'}}).then((team)=>{
+                    
+            vote5=team[0].votes
+            
+        }).catch((err)=>console.log(err))
+        const list=[vote1,vote2,vote3,vote4,vote5]
+        console.log(list)
+        res.render('homepage',{pagetitle: 'Homepage',Teamname:  req.session.name,isAuthenticated: isLoggedIn,votesbalance:0, list: list})
     }
     else{
         res.render('homenew',{pagetitle: 'Homepage',isAuthenticated: isLoggedIn})
     }
     }
-exports.vote1=(req,res,next)=>{
-    
-    const name= req.session.name 
-    if(req.session.isLoggedIn===true ){
-    Team.findAll({where: {name: name}}).then((team)=>{
-        if(team[0].votebalance>0){
-        team[0].votebalance-=1
-        
-        team[0].save()
-        }
-        else{
-            res.redirect('/')
-        }
-    }).catch((err)=>console.log(err))
-    Team.findAll({where: {name: 'Idea1'}}).then((team)=>{
-        team[0].votes+=1
-        team[0].save()
-    }).catch((err)=>console.log(err))
-    res.redirect('/')
-    }
-    else{
-        res.redirect('/')
-    }
-}
-exports.vote2=(req,res,next)=>{
-    const name= req.session.name 
-    if(req.session.isLoggedIn===true ){
-    Team.findAll({where: {name: name}}).then((team)=>{
-        if(team[0].votebalance>0){
-        team[0].votebalance-=1
-        
-        team[0].save()
-        }
-        else{
-            res.redirect('/')
-        }
-    }).catch((err)=>console.log(err))
-    Team.findAll({where: {name: 'Idea2'}}).then((team)=>{
-        team[0].votes+=1
-        team[0].save()
-    }).catch((err)=>console.log(err))
-    res.redirect('/')
-    }
-    else{
-        res.redirect('/')
-    }
-}
-exports.vote3=(req,res,next)=>{
-    
-    const name= req.session.name 
-    if(req.session.isLoggedIn===true ){
-    Team.findAll({where: {name: name}}).then((team)=>{
-        if(team[0].votebalance>0){
-        team[0].votebalance-=1
-        
-        team[0].save()
-        }
-        else{
-            res.redirect('/')
-        }
-    }).catch((err)=>console.log(err))
-    Team.findAll({where: {name: 'Idea3'}}).then((team)=>{
-        team[0].votes+=1
-        team[0].save()
-    }).catch((err)=>console.log(err))
-    res.redirect('/')
-    }
-    else{
-        res.redirect('/')
-    }
-}
-exports.vote4=(req,res,next)=>{
-    
-    const name= req.session.name 
-    if(req.session.isLoggedIn===true ){
-    Team.findAll({where: {name: name}}).then((team)=>{
-        if(team[0].votebalance>0){
-        team[0].votebalance-=1
-        
-        team[0].save()
-        }
-        else{
-            res.redirect('/')
-        }
-    }).catch((err)=>console.log(err))
-    Team.findAll({where: {name: 'Idea4'}}).then((team)=>{
-        team[0].votes+=1
-        team[0].save()
-    }).catch((err)=>console.log(err))
-    res.redirect('/')
-    }
-    else{
-        res.redirect('/')
-    }
-}
-exports.vote5=(req,res,next)=>{
-    
-    const name= req.session.name 
-    if(req.session.isLoggedIn===true ){
-    Team.findAll({where: {name: name}}).then((team)=>{
-        if(team[0].votebalance>0){
-        team[0].votebalance-=1
-        
-        team[0].save()
-        }
-        else{
-            res.redirect('/')
-        }
-    }).catch((err)=>console.log(err))
-    Team.findAll({where: {name: 'Idea5'}}).then((team)=>{
-        team[0].votes+=1
-        team[0].save()
-    }).catch((err)=>console.log(err))
-    res.redirect('/')
-    }
-    else{
-        res.redirect('/')
-    }
-}
+
 
 
 

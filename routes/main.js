@@ -30,9 +30,9 @@ router.get('/logout',(req,res,next)=>{
     })
     
 })
-router.post('/vote1',controller.vote1)
-router.post('/vote2',controller.vote2)
-router.post('/vote3',controller.vote3)
-router.post('/vote4',controller.vote4)
-router.post('/vote5',controller.vote5)
+router.post('/vote1',(req,res,next)=>{res.redirect('/')})
+router.post('/vote2',(req,res,next)=>{res.redirect('/')})
+router.post('/vote3',(req,res,next)=>{res.redirect('/')})
+router.post('/vote4',(req,res,next)=>{res.redirect('/')})
+router.post('/vote5',(req,res,next)=>{res.redirect('/')})
 module.exports=router
